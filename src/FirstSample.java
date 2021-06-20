@@ -6,6 +6,11 @@
  * @author yxy
  */
 public class FirstSample{
+
+    //枚举类型
+    enum Size{SMALL, MEDIUM, LARGE, EXTRA_LARGE};
+    Size aSize = Size.SMALL;
+
     public static void main(String[] args){
         //整型
         byte aByte = 12;
@@ -34,5 +39,12 @@ public class FirstSample{
             else
                 i++;//普通字符占用一个代码单元
         }
+        System.out.println("");
+
+        //boolean类型, java不能像C++那样int类型转换为boolean类型
+        boolean aBoolean = true;
+        if(aBoolean)
+            System.out.println("aBoolean is true");
+
     }
 }
