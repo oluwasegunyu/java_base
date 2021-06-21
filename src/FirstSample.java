@@ -1,16 +1,26 @@
+import java.math.*;
+import java.util.*;
 /**
- * Hello World示例程序
- * 注释，类名规范
+ * 大数值
+ * BigInteger和BigDecimal
  * @author yxy
  */
-public class FirstSample{ //标准的类名规范：类名是以大写字母开始的单词采用驼峰命名法，源代码的文件名必须与类名相同。
+public class FirstSample{
     public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        System.out.print("你想掷骰子多少次： ");
+        int k = in.nextInt();
+
+        System.out.print("你想掷多少点： ");
+        int n = in.nextInt();
+
         /*
-        注释有三种
-        第一种可以生成自动文档
-        第二种是行注释
-        第三种是多行注释，多行注释不能嵌套
+        计算阶乘
          */
-        System.out.println("Hello World!");
+        BigInteger lotteryOdds = BigInteger.valueOf(1);
+        for(int i=1;i<=k;i++){
+            lotteryOdds = lotteryOdds.multiply(BigInteger.valueOf(n-i+1)).divide(BigInteger.valueOf(i));
+        }
+        System.out.println("你中奖的概率是"+lotteryOdds+"分之一");
     }
 }
