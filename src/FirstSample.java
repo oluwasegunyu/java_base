@@ -1,16 +1,30 @@
 /**
- * Hello World示例程序
- * 注释，类名规范
+ * 字符串
  * @author yxy
  */
 public class FirstSample{ //标准的类名规范：类名是以大写字母开始的单词采用驼峰命名法，源代码的文件名必须与类名相同。
     public static void main(String[] args){
-        /*
-        注释有三种
-        第一种可以生成自动文档
-        第二种是行注释
-        第三种是多行注释，多行注释不能嵌套
-         */
-        System.out.println("Hello World!");
+        //字串
+        String greeting = "hello";
+        String s = greeting.substring(0,3);
+        System.out.println(s);
+
+        //拼接
+        String expletive = "Expletive";
+        String PG13 = "deleted";
+        String message = expletive + PG13;
+        System.out.println(message);
+
+        //字符串是否相等
+        if("hello".equals(greeting)){
+            System.out.println("greeting is " + greeting);
+        }
+
+        //构建字符串
+        StringBuilder builder = new StringBuilder();
+        builder.append(greeting);
+        builder.append(" yu"); //添加字符串
+        String completeString = builder.toString();
+        System.out.println(completeString);
     }
 }
