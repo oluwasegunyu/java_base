@@ -5,23 +5,53 @@ import java.util.*;
  * @author yxy
  */
 public class EmployeeTest{
-    public static void main(String[] args){
+    public static void main(String[] args) {
         /*
-        创建三个雇员对象
+        测试1,测试三倍工资
          */
-        Employee[] staff = new Employee[3];
-        staff[0] = new Employee("Carl Cracker", 75000, 1987, 12, 15);
-        staff[1] = new Employee("Harry Hacker", 50000, 1989, 10, 1);
-        staff[2] = new Employee("Tony Tester", 40000, 1990, 3, 15);
+        System.out.println("测试三倍工资");
+        double percent = 10;
+        System.out.println("Before: percent= " + percent);
+        tripleValue(percent);
+        System.out.println("After: percent= " + percent);
 
-        //每人提高百分之五的工资
-        for(Employee e: staff){
-            e.raiseSalary(5);
-        }
+        //测试2，三倍工资可行
+        System.out.println("\n测试三倍工资2");
+        Employee harry = new Employee("Harry", 5000);
+        System.out.println("Before: salary= "+ harry.getSalary());
+        tripleSalary(harry);
+        System.out.println("After: salary= " + harry.getSalary());
 
-        //输出雇员信息
-        for(Employee e: staff){
-            System.out.println("name= " + e.getName() + ", salary= " + e.getSalary() + ", hireDay= " + e.getHireDay());
-        }
+        //测试3, 方法不能改变参数的引用
+        System.out.println("\n测试交换");
+        Employee a = new Employee("Alice", 7000);
+        Employee b = new Employee("Bob", 6000);
+        System.out.println("Before: a = " + a.getName());
+        System.out.println("Before: b = " + b.getName());
+        swap(a, b);
+        System.out.println("After: a = " + a.getName());
+        System.out.println("After: b = " + b.getName());
+
     }
+
+        //三倍工资执行函数，错误的方法
+        public static void tripleValue(double x){
+            x = 3*x;
+            System.out.println("End of method: x=" + x);
+        }
+
+        //三倍工资，正确方法
+        public static void tripleSalary(Employee x){
+            x.raiseSalary(200);
+            System.out.println("End of method: x=" + x.getSalary());
+        }
+
+        //交换对象
+        public static void swap(Employee x, Employee y){
+            Employee temp =x;
+            x =y;
+            y = temp;
+            System.out.println("End of method: x= " + x.getName());
+            System.out.println("End of method: x= " + y.getName());
+        }
 }
