@@ -2,6 +2,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class Employee {
+
+    private static int nextId = 1;
     private String name;
     private double salary;
     private Date hireDay;
